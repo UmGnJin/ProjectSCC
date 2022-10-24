@@ -7,6 +7,19 @@
 
 -지표 측정 시 측정 기준 / 측정 수치 / 실제 측정 방법을 통해 같은 조건에서 프로젝트를 다운로드하여 측정 가능하도록 할 예정입니다.
 
+-직접 테스트를 진행할 경우, Unity 2020.3.12f1 버전에서 프로젝트를 실행하고 다음 절차를 따라야 합니다.
+  1. 현재 Scene이 SampleScene인지 확인하고, 아닐 경우 Project 창에서 Assets > Scenes 로 이동 후 SampleScene를 열어야 합니다.
+  2. Hierarchy 창에서 LevelManager 오브젝트를 선택, Inspector 창을 확인합니다.
+  3. Transform 하단에 아무것도 없는지 확인하고, 있다면 우클릭 > Remove Component로 제거합니다.
+  4. Project 창에서 Assets > Scripts 창으로 이동합니다.
+  5. CA, BSP, PN의 확인을 원할 경우, 각 이름이 쓰인 폴더로 들어가 ~Manager로 끝나는 스크립트 파일을 찾습니다.
+  5-1. SCC의 확인을 원할 경우, Assets > Scripts에 있는 LevelManager를 찾습니다.
+  6. 파일을 Inspector 창의 Transform 아래 드래그&드롭하여 추가합니다.
+  7. 파일을 더블클릭하여 스크립트를 엽니다.
+  8. 파일 상단의 주석을 통해 세부 사항을 조절합니다.
+  9. 유니티 창으로 돌아와, 상단의 재생 버튼을 눌러 실행합니다.
+  10. Console 창과 Game 창을 통해 정보를 확인합니다.
+
 *Shape Chasing Connection(SCC)이란?
 
 - SCC는 방의 배치와 형태를 중심으로 하는 절차적 레벨 생성 방식을 의미합니다.
