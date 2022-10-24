@@ -118,7 +118,7 @@ namespace SCC
                 DivideLevel(node.rightChild);
                 if (node.leftChild != null && node.rightChild != null)
                 {
-                    node.leftChild.Connect(map);
+                    //node.leftChild.Connect(map);
                     //node.rightChild.Connect(map);
                 }
             }
