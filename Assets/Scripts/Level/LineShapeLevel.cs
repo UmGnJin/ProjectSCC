@@ -37,6 +37,7 @@ namespace SCC
 
             foreach (Room r in rooms)
                 r.Paint(this, r);
+            ConnectRooms();
         }
         public override void PlaceRooms()
         {

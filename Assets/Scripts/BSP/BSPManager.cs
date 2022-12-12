@@ -75,7 +75,7 @@ public class BSPManager : MonoBehaviour
 
     public void RandomCheck()
     {
-        BSP bsp = new BSP(4000, 4000, 0.4f, 0.6f, 399, 800);
+        BSP bsp = new BSP(1000, 1000, 0.4f, 0.6f, 99, 200);
         bsp.DivideLevel(bsp.tree.root);
 
         int[] rnd = new int[100];
@@ -83,7 +83,7 @@ public class BSPManager : MonoBehaviour
 
         for(int n = 0; n < 100; n++)
         {
-            BSP bsp2 = new BSP(4000, 4000, 0.4f, 0.6f, 399, 800);
+            BSP bsp2 = new BSP(1000, 1000, 0.4f, 0.6f, 99, 200);
             bsp2.DivideLevel(bsp2.tree.root);
             int num = 0;
 
@@ -119,13 +119,13 @@ public class BSPManager : MonoBehaviour
         }// 본 관리자 오브젝트의 싱글턴화.
 
         //RunTimeCheck();
-        //RandomCheck();
+        RandomCheck();
 
-        Tiles = Resources.LoadAll<GameObject>("prefabs/Tiles");
-        bsp = new BSP(100, 100, 0.4f, 0.6f, 10, 20);
-        bsp.DivideLevel(bsp.tree.root);
+        //Tiles = Resources.LoadAll<GameObject>("prefabs/Tiles");
+        //BSP bsp = new BSP(100, 100, 0.3f, 0.7f, 10, 20);
+        //bsp.DivideLevel(bsp.tree.root);
 
-        PrintLevel();
+        //PrintLevel();
         //bsp.PrintLevel();
     }
 

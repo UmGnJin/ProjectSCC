@@ -1,7 +1,7 @@
 
 namespace SCC
 {
-    public class Terrain
+    public class Terrain 
     {
         public const int VOID = 9;
         public const int GROUND = 0;

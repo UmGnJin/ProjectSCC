@@ -34,17 +34,17 @@ namespace SCC
                     Destroy(this.gameObject);
             }// 본 관리자 오브젝트의 싱글턴화.
 
-            RoomCheck();
+            //RoomCheck();
             //RunTimeCheck();
             //RandomCheck();
 
-            //Tiles = Resources.LoadAll<GameObject>("prefabs/Tiles");
-            //level = new TestLevel();
-            //level = new LineShapeLevel(100);
-            //level = new CircleShapeLevel(100);
+            
+            Tiles = Resources.LoadAll<GameObject>("prefabs/Tiles");
+            level = new CircleShapeLevel(100);
 
-            //level.Create();
-            //PrintLevel();
+            level.Create();
+            PrintLevel();
+            
         }
 
         public void RunTimeCheck()
@@ -61,8 +61,7 @@ namespace SCC
                 
                 for (int j = 0; j < 1; j++)
                 {
-                    //LineShapeLevel level = new LineShapeLevel(4000);
-                    CircleShapeLevel level = new CircleShapeLevel(4000);
+                    CircleShapeLevel level = new CircleShapeLevel(1820);
                     level.Create();                                        
                 }
 
@@ -98,13 +97,10 @@ namespace SCC
 
             for (int n = 0; n < 100; n++)
             {
-                CircleShapeLevel level = new CircleShapeLevel(400);
-                //LineShapeLevel level = new LineShapeLevel(4000);
+                CircleShapeLevel level = new CircleShapeLevel(1820);
                 level.Create();
-                double dsize = (double) 1000000 / (double)level.length;
-                //rooms[n] = (double)level.rooms.Count * dsize;
                 rooms[n] = level.rooms.Count;
-                Debug.Log("Independent Rooms ratio : " + rooms[n]);
+                Debug.Log("Independent Rooms : " + rooms[n]);
             }
 
             double sum = 0;
@@ -120,14 +116,13 @@ namespace SCC
             }
             sd = Math.Sqrt(sum2 / deviation.Length);
 
-            Debug.Log("Average Independent Rooms ratio : " + avg);
+            Debug.Log("Average Independent Rooms : " + avg);
             Debug.Log("Standard Deviation : " + sd);
         }
 
         public void RandomCheck()
         {
-            //CircleShapeLevel level = new CircleShapeLevel(1600);
-            LineShapeLevel level = new LineShapeLevel(1600);
+            CircleShapeLevel level = new CircleShapeLevel(1820);
             level.Create();
 
             int[] rnd = new int[100];
@@ -135,21 +130,26 @@ namespace SCC
 
             for(int n = 0; n < 100; n++)
             {
-                //CircleShapeLevel level2 = new CircleShapeLevel(1600);
-                LineShapeLevel level2 = new LineShapeLevel(1600);
+                CircleShapeLevel level2 = new CircleShapeLevel(1820);
                 level2.Create();
                 int num = 0;
+                int num2 = 0;
 
                 for(int x = 0; x < level.width; x++)
                 {
                     for(int y = 0; y < level.height; y++)
                     {
                         if (map[x, y] == level2.map[x, y])
+                        {
+                            if (map[x, y] == Terrain.VOID)
+                                num2++;
                             num++;
+                        }
                     }
                 }
                 double val = (double)num / (double)level2.map.Length;
-                Debug.Log("Randomness : " + val);
+                double val2 = (double)num2 / (double)level2.map.Length;
+                Debug.Log("Randomness : " + val + "void : " + val2);
                 rnd[n] = (int)(val * 100);
             }
             double sum = 0;

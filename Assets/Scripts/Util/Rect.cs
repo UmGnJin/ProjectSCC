@@ -5,7 +5,7 @@ using System;
 
 namespace SCC
 {
-    public class Rect
+    public class Rect                     
     {
         public int x, y, xMax, yMax;
         public Rect() : this(0, 0, 0, 0)
@@ -50,10 +50,10 @@ namespace SCC
             yMax += y;
         }
 
-        public virtual int Width() { return xMax - x; }
-        public virtual int Height() { return yMax - y; }
+        public virtual int Width() { return xMax - x; } 
+        public virtual int Height() { return yMax - y; } 
 
-        public Rect Intersect(Rect r1)
+        public Rect Intersect(Rect r1) 
         {
             Rect r = new Rect();
             r.x = Math.Max(r1.x, this.x);
@@ -70,6 +70,6 @@ namespace SCC
         }
     }
 
-
+    
 
 }

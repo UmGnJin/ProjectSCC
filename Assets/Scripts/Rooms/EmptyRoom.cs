@@ -9,8 +9,13 @@ namespace SCC
     {
         public EmptyRoom(Level l)
         {
-            width = rand.Next((l.radius / 20), (l.radius / 10));
-            height = rand.Next((l.radius / 20), (l.radius / 10));
+            width = rand.Next((l.radius / 10), (l.radius / 5));
+            height = rand.Next((l.radius / 10), (l.radius / 5));
+            width = rand.Next((width / 2), width);
+            height = rand.Next((height / 2), height);
+            
+
+
             if (width < 4)
                 width = 4;
             if (height < 4)

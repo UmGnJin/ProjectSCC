@@ -83,6 +83,28 @@ namespace SCC
             index = -1;
             return false;
         }
+        public void ConnectRooms()
+        {
+            foreach(Room r1 in rooms)
+            {
+                foreach(Room r2 in rooms)
+                {
+                    if (r2.GetHashCode() == r1.GetHashCode() || r1 == null || r2 == null || r1.neighbours.ContainsKey(r2) || r2.neighbours.ContainsKey(r1))
+                        continue;
+                    if(r1.IsNeighbour(r2))
+                    {
+                        r1.neighbours.Add(r2, false);
+                        r2.neighbours.Add(r1, false);
+                    }
+                }
+            }
+            foreach(Room r in rooms)
+            {
+                foreach (KeyValuePair<Room, bool> p in r.neighbours.ToList())
+                    r.Connect(this, p.Key);
+            }
+        }
+
         
         public Rect LevelRect()
         {

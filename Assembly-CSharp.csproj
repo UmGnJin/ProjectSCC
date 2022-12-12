@@ -56,23 +56,31 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Rooms\Room.cs" />
     <Compile Include="Assets\Scripts\BSP\BSPManager.cs" />
+    <Compile Include="Assets\Scripts\Level\CircleShapeLevel.cs" />
+    <Compile Include="Assets\Scripts\Rooms\DownStairsRoom.cs" />
+    <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\Level\RectShapeLevel.cs" />
+    <Compile Include="Assets\Scripts\Level\LineShapeLevel.cs" />
+    <Compile Include="Assets\Scripts\Rooms\EmptyRoom.cs" />
+    <Compile Include="Assets\Scripts\Level\TestLevel.cs" />
     <Compile Include="Assets\Scripts\Util\Terrain.cs" />
+    <Compile Include="Assets\Scripts\BSP\ShapedBSPManager.cs" />
     <Compile Include="Assets\Scripts\BSP\BSP.cs" />
     <Compile Include="Assets\Scripts\BSP\Tree.cs" />
+    <Compile Include="Assets\Scripts\Util\Rect.cs" />
     <Compile Include="Assets\Scripts\CA\CAManager.cs" />
     <Compile Include="Assets\Scripts\PN\PerlinManager.cs" />
     <Compile Include="Assets\Scripts\CA\CA.cs" />
-    <Compile Include="Assets\Scripts\PN\PerlinNoise.cs" />
-    <Compile Include="Assets\Scripts\Util\Rect.cs" />
-    <Compile Include="Assets\Scripts\Rooms\Room.cs" />
-    <Compile Include="Assets\Scripts\Rooms\DownStairsRoom.cs" />
     <Compile Include="Assets\Scripts\Rooms\UpStairsRoom.cs" />
-    <Compile Include="Assets\Scripts\Rooms\EmptyRoom.cs" />
-    <Compile Include="Assets\Scripts\Level\LineShapeLevel.cs" />
+    <Compile Include="Assets\Scripts\PN\PerlinNoise.cs" />
     <Compile Include="Assets\Scripts\Level\Level.cs" />
-    <Compile Include="Assets\Scripts\Level\CircleShapeLevel.cs" />
-    <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\Level\FreeShapeLevel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Resources\condition_tooltip.txt" />
+    <None Include="Assets\Resources\research_enemy.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
